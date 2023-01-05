@@ -15,15 +15,24 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * svasu version information.
+ * The mod_svasu instance list viewed event.
  *
  * @package    mod_svasu
- * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @copyright  2013 Ankit Agarwal
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace mod_svasu\event;
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019111800;    // The current module version (Date: YYYYMMDDXX).
-$plugin->requires  = 2019111200;    // Requires this Moodle version.
-$plugin->component = 'mod_svasu';   // Full name of the plugin (used for diagnostics).
+/**
+ * The mod_svasu instance list viewed event class.
+ *
+ * @package    mod_svasu
+ * @since      Moodle 2.7
+ * @copyright  2013 Ankit Agarwal
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class course_module_instance_list_viewed extends \core\event\course_module_instance_list_viewed {
+}
+

@@ -15,15 +15,32 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * svasu version information.
+ * Search area for mod_svasu activities.
  *
  * @package    mod_svasu
- * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @copyright  2015 David Monllao {@link http://www.davidmonllao.com}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace mod_svasu\search;
+
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019111800;    // The current module version (Date: YYYYMMDDXX).
-$plugin->requires  = 2019111200;    // Requires this Moodle version.
-$plugin->component = 'mod_svasu';   // Full name of the plugin (used for diagnostics).
+/**
+ * Search area for mod_svasu activities.
+ *
+ * @package    mod_svasu
+ * @copyright  2015 David Monllao {@link http://www.davidmonllao.com}
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class activity extends \core_search\base_activity {
+
+    /**
+     * Returns true if this area uses file indexing.
+     *
+     * @return bool
+     */
+    public function uses_file_indexing() {
+        return true;
+    }
+}

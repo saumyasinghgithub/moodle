@@ -1,0 +1,6 @@
+This files describes API changes in the mod svasu basic report
+
+=== 3.6 ===
+
+* The following renamed classes have been completely removed:
+  - svasu_basic_report (now: svasureport_basic\report)

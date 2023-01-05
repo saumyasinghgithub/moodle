@@ -15,15 +15,21 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * svasu version information.
+ * Subplugin info class.
  *
- * @package    mod_svasu
- * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   mod_svasu
+ * @copyright 2013 Petr Skoda {@link http://skodak.org}
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+namespace mod_svasu\plugininfo;
+
+use core\plugininfo\base;
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019111800;    // The current module version (Date: YYYYMMDDXX).
-$plugin->requires  = 2019111200;    // Requires this Moodle version.
-$plugin->component = 'mod_svasu';   // Full name of the plugin (used for diagnostics).
+
+class svasureport extends base {
+    public function is_uninstall_allowed() {
+        return true;
+    }
+}

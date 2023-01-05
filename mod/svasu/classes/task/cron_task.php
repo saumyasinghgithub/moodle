@@ -15,15 +15,39 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * svasu version information.
+ * A scheduled task for svasu cron.
  *
  * @package    mod_svasu
- * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @copyright  2017 Abhishek kumar <ganitgenius@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
+namespace mod_svasu\task;
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019111800;    // The current module version (Date: YYYYMMDDXX).
-$plugin->requires  = 2019111200;    // Requires this Moodle version.
-$plugin->component = 'mod_svasu';   // Full name of the plugin (used for diagnostics).
+/**
+ * A cron_task class to be used by Tasks API.
+ *
+ * @copyright  2017 Abhishek kumar <ganitgenius@moodle.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class cron_task extends \core\task\scheduled_task {
+
+    /**
+     * Get a descriptive name for this task (shown to admins).
+     *
+     * @return string
+     */
+    public function get_name() {
+        return get_string('crontask', 'mod_svasu');
+    }
+
+    /**
+     * Run svasu cron.
+     */
+    public function execute() {
+        global $CFG;
+        require_once($CFG->dirroot . '/mod/svasu/lib.php');
+        svasu_cron_scheduled_task();
+    }
+
+}

@@ -14,16 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+
 /**
- * svasu version information.
- *
- * @package    mod_svasu
- * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * Defines the version of svasu_objectives
+ * @package   svasureport_objectives
+ * @author    Dan Marsden <dan@danmarsden.com>
+ * @copyright 2013 Dan Marsden
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019111800;    // The current module version (Date: YYYYMMDDXX).
-$plugin->requires  = 2019111200;    // Requires this Moodle version.
-$plugin->component = 'mod_svasu';   // Full name of the plugin (used for diagnostics).
+$plugin->version   = 2019111800;
+$plugin->requires  = 2019111200;
+$plugin->component = 'svasureport_objectives';

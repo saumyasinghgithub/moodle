@@ -1,0 +1,274 @@
+.path-mod-svasu .top {
+    vertical-align: top;
+}
+
+.path-mod-svasu .svasu-left {
+    text-align: left;
+}
+
+.path-mod-svasu .svasu-right {
+    text-align: right;
+}
+
+.path-mod-svasu .scoframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ios #svasupage #svasu_content {
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+}
+
+#page-mod-svasu-player #svasutop {
+    position: relative;
+    width: 100%;
+    height: 30px;
+}
+
+#page-mod-svasu-player #svasubrowse {
+    position: absolute;
+    left: 5px;
+    top: 0;
+}
+
+#page-mod-svasu-player #svasunav {
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 3px;
+    width: 100%;
+}
+
+#page-mod-svasu-player #svasubox {
+    width: 74%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#page-mod-svasu-player #svasupage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#page-mod-svasu-player #svasupage #toctree {
+    position: relative;
+    width: 100%;
+}
+
+#page-mod-svasu-player #tocbox {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 0.8em;
+}
+
+#page-mod-svasu-player #toctree {
+    overflow: visible;
+}
+
+#page-mod-svasu-player #tochead {
+    position: relative;
+    text-align: center;
+    top: 3px;
+    height: 30px;
+}
+
+#page-mod-svasu-player #svasupage .scoframe {
+    border: 0;
+}
+
+#page-mod-svasu-player #svasupage #svasu_object {
+    border: none;
+    width: 98%;
+    height: 98%;
+}
+
+#page-mod-svasu-player #svasupage #svasu_object.svasu_nav_under_content {
+    height: 95%;
+}
+
+#page-mod-svasu-player #svasupage #svasu_content {
+    height: 100%;
+}
+
+#page-mod-svasu-player #svasupage #svasu_toc {
+    position: relative;
+}
+
+#page-mod-svasu-player #svasupage #svasu_toc_title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#page-mod-svasu-player #svasupage #svasu_tree {
+    border-right: 5px solid rgb(239, 245, 255);
+}
+
+#page-mod-svasu-player #svasupage #svasu_navpanel {
+    text-align: center;
+}
+
+#page-mod-svasu-player .toc,
+#page-mod-svasu-player .no-toc {
+    width: 100%;
+}
+
+#page-mod-svasu-player .structlist {
+    list-style-type: none;
+    white-space: nowrap;
+}
+
+#page-mod-svasu-player .structurelist {
+    position: relative;
+    list-style-type: none;
+    width: 96%;
+    margin: 0;
+    padding: 0;
+}
+
+#page-mod-svasu-player .structurelist ul {
+    padding-left: 0.5em;
+    margin-left: 0.5em;
+}
+
+#page-mod-svasu-player #svasupage #svasu_toc.disabled,
+#page-mod-svasu-player #svasupage #svasu_toc.loading,
+#page-mod-svasu-player #svasupage #svasu_toc_toggle.disabled,
+#page-mod-svasu-player #svasupage #svasu_toc_toggle.loading {
+    display: none;
+}
+
+#page-mod-svasu-view .structurelist {
+    list-style-type: none;
+    white-space: nowrap;
+}
+
+#page-mod-svasu-view .structurelist {
+    list-style-type: none;
+    white-space: nowrap;
+}
+
+#page-mod-svasu-view .exceededmaxattempts {
+    color: #c00;
+}
+
+#page-mod-svasu-player #altfinishlink {
+    font-size: 140%;
+    border: 0;
+    padding: 0;
+}
+
+#page-mod-svasu-player #svasumode {
+    float: left;
+    border: 0;
+}
+
+#page-mod-svasu-player.pagelayout-popup #page-content .region-content {
+    padding: 0;
+}
+
+#page-mod-svasu-player.pagelayout-popup #page-wrapper {
+    width: 100%;
+}
+
+#page-mod-svasu-player .yui-layout-scroll div.yui-layout-bd {
+    overflow: visible;
+}
+
+#page-mod-svasu-player .yui-layout-unit-left div.yui-layout-bd {
+    overflow: auto;
+}
+
+.path-mod-svasu.forcejavascript .toc {
+    display: none;
+}
+
+.path-mod-svasu.forcejavascript #svasupage #tocbox {
+    display: none;
+}
+
+.path-mod-svasu.jsenabled .forcejavascriptmessage {
+    display: none;
+}
+
+.path-mod-svasu.jsenabled .toc {
+    display: block;
+}
+
+.path-mod-svasu.jsenabled #svasupage #tocbox {
+    display: block;
+}
+
+#page-mod-svasu-report-userreporttracks table .c1 {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#page-mod-svasu-report .svasuattemptcounts {
+    clear: left;
+    text-align: center;
+    display: inline;
+    margin-left: 20%;
+}
+
+#page-mod-svasu-player #svasupage span.yui3-treeview-icon {
+    display: none;
+}
+
+#page-mod-svasu-player #svasupage li.yui3-treeview-has-children > div.yui3-treeview-row > span.yui3-treeview-icon {
+    display: block;
+}
+
+#page-mod-svasu-player #svasupage div.yui3-u-1,
+#page-mod-svasu-player #svasupage div.yui3-u-3-4,
+#page-mod-svasu-player #svasupage div.yui3-u-1-5,
+#page-mod-svasu-player #svasupage div.yui3-u-1-24 {
+    display: inline-block;
+    *display: inline; /* stylelint-disable-line */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+#page-mod-svasu-player #svasupage div.yui3-u-1 {
+    display: block;
+}
+
+#page-mod-svasu-player #svasupage div.yui3-u-3-4 {
+    width: 75%;
+}
+
+#page-mod-svasu-player #svasupage div.yui3-u-1-5 {
+    width: 20%;
+}
+
+#page-mod-svasu-player #svasupage div.yui3-u-1-24 {
+    width: 4.1666%;
+}
+
+#page-mod-svasu-player #svasupage div.yui3-g-r {
+    letter-spacing: normal;
+    word-spacing: -0.43em;
+}
+
+#svasu_layout {
+    margin-bottom: 50px;
+}
+
+/**
+* Opera as of 12 on Windows needs word-spacing.
+* The ".opera-only" selector is used to prevent actual prefocus styling
+* and is not required in markup.
+*/
+#page-mod-svasu-player .opera-only :-o-prefocus,
+#page-mod-svasu-player #svasupage div.yui3-g-r img {
+    max-width: 100%;
+}

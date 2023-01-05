@@ -1,4 +1,3 @@
-<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -14,16 +13,24 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * svasu version information.
- *
- * @package    mod_svasu
- * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
+function svasu_openpopup(url,name,options,width,height) {
+    if (width <= 100) {
+        width = Math.round(screen.availWidth * width / 100);
+    }
+    if (height <= 100) {
+        height = Math.round(screen.availHeight * height / 100);
+    }
+    options += ",width=" + width + ",height=" + height;
 
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->version   = 2019111800;    // The current module version (Date: YYYYMMDDXX).
-$plugin->requires  = 2019111200;    // Requires this Moodle version.
-$plugin->component = 'mod_svasu';   // Full name of the plugin (used for diagnostics).
+    windowobj = window.open(url,name,options);
+    windowobj.opener = null;
+    if (!windowobj) {
+        return;
+    }
+    if ((width == 100) && (height == 100)) {
+        // Fullscreen
+        windowobj.moveTo(0,0);
+    }
+    windowobj.focus();
+    return windowobj;
+}

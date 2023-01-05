@@ -15,15 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * svasu version information.
+ * Strings for component 'svasu_objectives' report plugin
  *
- * @package    mod_svasu
- * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   svasureport_objectives
+ * @author    Dan Marsden <dan@danmarsden.com>
+ * @copyright 2013 Dan Marsden
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019111800;    // The current module version (Date: YYYYMMDDXX).
-$plugin->requires  = 2019111200;    // Requires this Moodle version.
-$plugin->component = 'mod_svasu';   // Full name of the plugin (used for diagnostics).
+$string['pluginname'] = 'Objectives report';
+$string['privacy:metadata:preference:svasu_report_objectives_score'] = 'Whether to display the objective score in the SVASU report';
+$string['privacy:metadata:preference:svasu_report_pagesize'] = 'Number of users to display in the SVASU reports';
+$string['objectivex'] = 'Objective {$a}';
+$string['objectivescore'] = 'Show objective score';
+$string['score'] = 'score';
+$string['status'] = 'status';

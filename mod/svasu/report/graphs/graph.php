@@ -13,17 +13,19 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
 /**
- * svasu version information.
+ * Core Report class of graphs reporting plugin
  *
- * @package    mod_svasu
- * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @package    svasureport_graphs
+ * @copyright  2012 Ankit Kumar Agarwal
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @deprecated since Moodle 3.2
  */
 
-defined('MOODLE_INTERNAL') || die();
+define('NO_DEBUG_DISPLAY', true);
 
-$plugin->version   = 2019111800;    // The current module version (Date: YYYYMMDDXX).
-$plugin->requires  = 2019111200;    // Requires this Moodle version.
-$plugin->component = 'mod_svasu';   // Full name of the plugin (used for diagnostics).
+require_once(__DIR__ . '/../../../../config.php');
+require_once($CFG->libdir . '/filelib.php');
+
+debugging('This way of generating the chart is deprecated, refer to \\svasureport_graphs\\report::display().', DEBUG_DEVELOPER);
+send_file_not_found();
