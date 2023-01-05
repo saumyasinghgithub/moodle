@@ -445,3 +445,4 @@ $string['youmustselectastatus'] = 'You must select a status to require';
 
 // Deprecated since Moodle 3.8.
 $string['duedate'] = 'Due date';
+$string['svasuname'] = 'Svasu - Add Resource';

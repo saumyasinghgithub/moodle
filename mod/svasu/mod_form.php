@@ -30,14 +30,15 @@ class mod_svasu_mod_form extends moodleform_mod {
         $mform = $this->_form;
 
         //svasu cloud 
-        $PAGE->requires->js( new moodle_url($CFG->wwwroot . '/mod/hotquestion/svasu.js') );
+        global $PAGE;
+        $PAGE->requires->js( new moodle_url($CFG->wwwroot . '/mod/svasu/svasu.js') );
         $selectModelButton = $mform->addElement('button', 'svasu-add-resource', get_string('svasuname', 'svasu')); 
         $buttonattributes = array('title'=>get_string('svasuname', 'svasu'), 'onclick'=>"return openpopup();");   
         $selectModelButton->updateAttributes($buttonattributes);
         //fetch token value from db
-        $pluginDataSvasu = $DB->get_record('config_plugins', ['plugin' => 'mod_svasu', 'name' => 'token']);
-        $token =  $pluginDataSvasu->value;
-        $mform->addElement('hidden','configToken',$token);
+        //$pluginDataSvasu = $DB->get_record('config_plugins', ['plugin' => 'mod_svasu', 'name' => 'token']);
+        //$token =  $pluginDataSvasu->value;
+        //$mform->addElement('hidden','configToken',$token);
         // Add standard elements.
         $mform->addElement('html', '
         <div id="myiframe"></div>');

@@ -1,8 +1,21 @@
+window.onload = function() {
+    document.getElementById('id_general').style.display = 'none';
+    document.getElementById('id_displaysettings').style.display = 'none';
+    document.getElementById('id_availability').style.display = 'none';
+    document.getElementById('id_gradesettings').style.display = 'none';
+    document.getElementById('id_attemptsmanagementhdr').style.display = 'none';
+    document.getElementById('id_compatibilitysettingshdr').style.display = 'none';
+    document.getElementById('id_modstandardelshdr').style.display = 'none';
+    document.getElementById('id_availabilityconditionsheader').style.display = 'none';
+    document.getElementById('id_activitycompletionheader').style.display = 'none';
+    document.getElementById('id_tagshdr').style.display = 'none';
+    document.getElementById('id_competenciessection').style.display = 'none';
+};
 //open iframe
 function openpopup(){
-    var token           = document.getElementsByName("configToken");
-    var param           = 'token='+ token[0].value+'&functionName=getScormPackageFromSvasu';
-    url                 = 'https://staging.svasu.cloud/svasu/login?'+param;     
+    //var token           = document.getElementsByName("configToken");
+    //var param           = 'token='+ token[0].value+'&functionName=getScormPackageFromSvasu';
+    //url                 = 'https://staging.svasu.cloud/svasu/login?'+param;     
     var newUrl          = 'https://staging.svasu.cloud/svasu/login?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwOlwvXC9sb2NhbGhvc3RcL21vb2RsZS1zdmFzdVwvIiwidGhpcmRQYXJ0eVR5cGUiOiJtb29kbGUifQ.KHIo_r2iV_Ij91270hfOt7EBG7bb16FWyMat1UmAvNI&functionName=getScormPackageFromSvasu';
     var myiframe        = document.getElementById("myiframe");
     myiframe.innerHTML  = '<iframe id="svasuCloudFrame" class="myiframec"  src="' + newUrl + '" width="800" height="400"></iframe>';   
@@ -17,7 +30,9 @@ if (window.addEventListener) {
 //cors end
 
 //get response from svasu
-function getScormPackageFromSvasu(event){    
+function getScormPackageFromSvasu(event){   
+    //hide iframe
+    document.getElementById('myiframe').style.display = 'none';
     //get scorm binary content
     if (event.origin != "https://staging.svasu.cloud") {
         console.log("The message came from some site we don't know. We're not processing it.");
@@ -27,7 +42,7 @@ function getScormPackageFromSvasu(event){
     var binaryContent  = dataFromChildIframe.message;
     
     //download scorm zip
-    /*var filename = 'sco.zip';
+    var filename = 'sco.zip';
     var blobData = (typeof bom !== 'undefined') ? [bom, binaryContent] : [binaryContent];
     var blob = new Blob(blobData, {type: 'application/octet-stream'});
     if (typeof window.navigator.msSaveBlob !== 'undefined') {
@@ -48,10 +63,10 @@ function getScormPackageFromSvasu(event){
             document.body.removeChild(tempLink);
             window.URL.revokeObjectURL(blobURL);
         }, 200)
-    }*/
+    }
 
     //set value of mandatory field
-    //$('#id_name').val(filename);
+    $('#id_name').val(filename);
     
     //upload zip file
     //var params = {};
