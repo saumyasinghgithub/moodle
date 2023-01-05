@@ -8,3 +8,4 @@
 3) mod/plugin/pix/icon.png
 4) mod/plugin/version.php
 * Reference Urls
+* IMP : https://mahakala.lesc.uec.ac.jp/mahoodle/moodle/docs/34/ja/dev/Activity_modules.html
