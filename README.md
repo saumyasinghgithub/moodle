@@ -9,3 +9,4 @@
 4) mod/plugin/version.php
 * Reference Urls
 * IMP : https://mahakala.lesc.uec.ac.jp/mahoodle/moodle/docs/34/ja/dev/Activity_modules.html
+** Issue : Moodle forum discussion --> https://moodle.org/mod/forum/discuss.php?d=442745
