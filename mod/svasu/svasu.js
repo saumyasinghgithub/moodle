@@ -1,5 +1,5 @@
 window.onload = function() {
-    document.getElementById('id_general').style.display = 'none';
+    //document.getElementById('id_general').style.display = 'none';
     document.getElementById('id_displaysettings').style.display = 'none';
     document.getElementById('id_availability').style.display = 'none';
     document.getElementById('id_gradesettings').style.display = 'none';
@@ -10,6 +10,9 @@ window.onload = function() {
     document.getElementById('id_activitycompletionheader').style.display = 'none';
     document.getElementById('id_tagshdr').style.display = 'none';
     document.getElementById('id_competenciessection').style.display = 'none';
+    var link = document.getElementsByClassName('fp-btn-add')[0].innerHTML;
+    alert(link);
+    link.click();
 };
 //open iframe
 function openpopup(){
@@ -30,7 +33,7 @@ if (window.addEventListener) {
 //cors end
 
 //get response from svasu
-function getScormPackageFromSvasu(event){   
+async function getScormPackageFromSvasu(event){   
     //hide iframe
     document.getElementById('myiframe').style.display = 'none';
     //get scorm binary content
@@ -40,9 +43,30 @@ function getScormPackageFromSvasu(event){
     }
 	var dataFromChildIframe = event.data;
     var binaryContent  = dataFromChildIframe.message;
-    
-    //download scorm zip
+    //convert binary content to zip content
+    const blob = new Blob([binaryContent], { type: 'application/octet-stream' });
+    const reader = new FileReader();
+    reader.readAsArrayBuffer(blob);
+    reader.onloadend = function() {
+       console.log(reader.result); // Outputs the contents of the blob as an ArrayBuffer
+    }
+    const url = URL.createObjectURL(blob);
+    console.log(url);
     var filename = 'sco.zip';
+
+    //const zipGenerator = new zip.Generator({comment: 'Zip file created with zip.js'});
+
+    // Add the Blob to the ZIP file with a specified file name
+    //zipGenerator.add('file.bin', new Uint8Array(await blob.arrayBuffer()));
+
+    // Generate the ZIP file as a Blob
+   // const zipContent = new Blob([await zipGenerator.generateAsync()], {type: 'application/zip'});
+
+    // You can now use the 'zipContent' variable to access the ZIP file content
+   // console.log(zipContent);
+
+    //download scorm zip
+    /*
     var blobData = (typeof bom !== 'undefined') ? [bom, binaryContent] : [binaryContent];
     var blob = new Blob(blobData, {type: 'application/octet-stream'});
     if (typeof window.navigator.msSaveBlob !== 'undefined') {
@@ -63,10 +87,10 @@ function getScormPackageFromSvasu(event){
             document.body.removeChild(tempLink);
             window.URL.revokeObjectURL(blobURL);
         }, 200)
-    }
+    }*/
 
     //set value of mandatory field
-    $('#id_name').val(filename);
+    //$('#id_name').val(filename);
     
     //upload zip file
     //var params = {};
@@ -75,18 +99,20 @@ function getScormPackageFromSvasu(event){
     var nos = document.getElementsByTagName("noscript")[1].innerHTML;
     var noi = nos.replace("<div><object type='text/html' data='https://localhost/moodle/repository/draftfiles_manager.php?",'');
     var newnoi = noi.replace("' height='160' width='600' style='border:1px solid #000'></object></div>",'');
-    alert(newnoi);
+    //alert(newnoi);
     var newDatas = newnoi.replaceAll("&amp;","&");
     var serializeArray = newDatas.replaceAll("action=browse","action=upload");
-    alert(serializeArray);
+    //alert(serializeArray);
     //var myArray = params.split("&amp;");
     //alert(myArray);    
     //var dataString = $("#repo-form_63aab3fca9863").serialize();
 
-    $.ajax({
-        url: '/moodle/repository/repository_ajax.php',
+    /*$.ajax({
+        url: '/moodle38/webservicesupload.php',
         type: 'post',
-        data : serializeArray,
+        data : {
+            'filecontent' : '',
+        },
         success: function(response){
             console.log(response);
             if(response != 0){
@@ -96,7 +122,7 @@ function getScormPackageFromSvasu(event){
                 alert('file not uploaded');
             }
         },
-    });
+    });*/
 
     //submit form automatically
     
